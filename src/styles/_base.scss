@@ -10,3 +10,8 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+.nav-active, .nav-active:focus {
+  color: black;
+  text-decoration: none;
+  pointer-events: none;
+}

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../../redux/modules/counter'
 import DuckImage from './Duck.jpg'
-import classes from './HomeView.scss'
+import classes from './SecondView.scss'
 
 // We can use Flow (http://flowtype.org/) to type our component's props
 // and state. For convenience we've included both regular propTypes and
@@ -21,7 +21,7 @@ type Props = {
 // We avoid using the `@connect` decorator on the class definition so
 // that we can export the undecorated component for testing.
 // See: http://rackt.github.io/redux/docs/recipes/WritingTests.html
-export class HomeView extends React.Component {
+export class SecondView extends React.Component {
   props: Props;
   static propTypes = {
     counter: PropTypes.number.isRequired,
@@ -39,7 +39,7 @@ export class HomeView extends React.Component {
               alt='This is a duck, because Redux.' />
           </div>
         </div>
-        <h1>Welcome to the React Redux Starter Kit</h1>
+        <h1>This is the second page</h1>
         <h2>
           Sample Counter:
           {' '}
@@ -63,4 +63,4 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   increment: () => increment(1),
   doubleAsync
-})(HomeView)
+})(SecondView)

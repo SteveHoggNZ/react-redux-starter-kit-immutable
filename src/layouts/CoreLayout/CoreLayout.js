@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { IndexLink, Link } from 'react-router'
 import '../../styles/core.scss'
 
 // Note: Stateless/function components *will not* hot reload!
@@ -13,6 +14,10 @@ import '../../styles/core.scss'
 function CoreLayout ({ children }) {
   return (
     <div className='page-container'>
+      <IndexLink to='/' activeClassName='nav-active'>First Page</IndexLink>
+      {' . '}
+      <Link to='/secondview' activeClassName='nav-active'>Second Page</Link>
+      <br />
       <div className='view-container'>
         {children}
       </div>
