@@ -9,8 +9,10 @@ export const reducers = (asyncReducers) => {
 }
 
 export const injectReducer = (store, { key, reducer }) => {
-  store.asyncReducers[key] = reducer
-  store.replaceReducer(reducers(store.asyncReducers))
+  if (!store.asyncReducers[key]) {
+    store.asyncReducers[key] = reducer
+    store.replaceReducer(reducers(store.asyncReducers))
+  }
 }
 
 export default reducers
