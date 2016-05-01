@@ -18,7 +18,7 @@ const mapActionCreators = {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state.counter
+  counter: state.get('counter')
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
