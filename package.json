@@ -80,6 +80,13 @@
         "NODE_ENV": "test",
         "DEBUG": "app:*"
       }
+    },
+    "test:tape": {
+      "command": "babel-node ./node_modules/karma/bin/karma start build/karma-tape.conf",
+      "env": {
+        "NODE_ENV": "test",
+        "DEBUG": "app:*"
+      }
     }
   },
   "repository": {

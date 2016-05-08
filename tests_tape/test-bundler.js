@@ -1,20 +1,22 @@
+import { h } from './util'
+
 // ---------------------------------------
 // Test Environment Setup
 // ---------------------------------------
-import sinon from 'sinon'
-import chai from 'chai'
-import sinonChai from 'sinon-chai'
-import chaiAsPromised from 'chai-as-promised'
-import chaiEnzyme from 'chai-enzyme'
-
-chai.use(sinonChai)
-chai.use(chaiAsPromised)
-chai.use(chaiEnzyme())
-
-global.chai = chai
-global.sinon = sinon
-global.expect = chai.expect
-global.should = chai.should()
+// import sinon from 'sinon'
+// import chai from 'chai'
+// import sinonChai from 'sinon-chai'
+// import chaiAsPromised from 'chai-as-promised'
+// import chaiEnzyme from 'chai-enzyme'
+//
+// chai.use(sinonChai)
+// chai.use(chaiAsPromised)
+// chai.use(chaiEnzyme())
+//
+// global.chai = chai
+// global.sinon = sinon
+// global.expect = chai.expect
+// global.should = chai.should()
 
 // ---------------------------------------
 // Require Tests
@@ -23,6 +25,9 @@ global.should = chai.should()
 // NOTE: `new Array()` is used rather than an array literal since
 // for some reason an array literal without a trailing `;` causes
 // some build environments to fail.
+
+h('=== START ===')
+
 const __karmaWebpackManifest__ = new Array() // eslint-disable-line
 const inManifest = (path) => ~__karmaWebpackManifest__.indexOf(path)
 
@@ -37,3 +42,6 @@ const testsToRun = testsContext.keys().filter(inManifest)
 const componentsContext = require.context('../src/', true, /^((?!main).)*\.js$/)
 
 componentsContext.keys().forEach(componentsContext)
+
+h('============================')
+h(`${new Date().toLocaleString()}`)

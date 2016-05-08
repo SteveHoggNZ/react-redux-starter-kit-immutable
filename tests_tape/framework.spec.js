@@ -2,11 +2,6 @@ import test from 'blue-tape'
 
 const t = (name, cb) => test(`- ${name}`, cb)
 
-t('####### START ########', function (a) {
-    a.plan(1)
-    a.ok(true, 'The End...')
-})
-
 t('nested test', function (a) {
     const tt = (name, cb) => a.test(`-- ${name}`, cb)
 
@@ -25,8 +20,3 @@ t('nested test', function (a) {
         aa.equal(2+3, 5, '5 equals 5');
     });
 });
-
-t('####### END ########', function (a) {
-    a.plan(1)
-    a.ok(true, 'The End...')
-})
